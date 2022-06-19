@@ -13,34 +13,35 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author DELL
+ * @author ahmed
  */
-public class DialogNextLine extends JDialog{
-    private JTextField NameofItemBar;
-    private JTextField CountOfItemBar;
+public class DialogNextLine extends JDialog {
+
+    private final JTextField NameofItemBar;
+    private final JTextField CountOfItemBar;
     private JTextField PriceOfItemBar;
     private JLabel NameOfItemLabel;
     private JLabel CountOfItemLabel;
     private JLabel PriceOfItemLabel;
     private JButton okBtn;
     private JButton cancelBtn;
-    
+
     public DialogNextLine(MainFrame frame) {
-       
+
         PriceOfItemBar = new JTextField(20);
         PriceOfItemLabel = new JLabel("Item Price");
         CountOfItemBar = new JTextField(20);
         CountOfItemLabel = new JLabel("Item Count");
         NameofItemBar = new JTextField(20);
         NameOfItemLabel = new JLabel("Item Name");
+        okBtn = new JButton("OK");
+        cancelBtn = new JButton("Cancel");
+        setLayout(new GridLayout(4, 2));
         okBtn.setActionCommand("newLineOK");
         cancelBtn.setActionCommand("newLineCancel");
-         okBtn = new JButton("OK");
-        cancelBtn = new JButton("Cancel");
         okBtn.addActionListener(frame.getActionListener());
         cancelBtn.addActionListener(frame.getActionListener());
-        setLayout(new GridLayout(4, 2));
-        
+
         add(NameOfItemLabel);
         add(NameofItemBar);
         add(CountOfItemLabel);
@@ -49,7 +50,7 @@ public class DialogNextLine extends JDialog{
         add(PriceOfItemBar);
         add(okBtn);
         add(cancelBtn);
-        
+
         pack();
     }
 
